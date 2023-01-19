@@ -3,3 +3,4 @@ Flask
 gunicorn
 sklearn
 pandas
+-e .  # search for all packages in current dir , setup.py file is mandetotry 
