@@ -4,7 +4,7 @@ from typing import List
 # Declaring variables for the setup function 
 
 Project_Name = "Housing Predictor"
-Version = "0.0."
+Version = "0.0.4"
 Author = "Aparna"
 Description = "First ML Project"
 Requirement_file_name = "requirements.txt"
@@ -17,7 +17,7 @@ def get_requirements_list()->List[str]:  ## returns a list in str datatype as me
 
     """
     with open (Requirement_file_name) as requirement_file:
-        return requirement_file.readlines().remove("-e .")
+        return requirement_file.readlines().remove("-e .") # since we using find packages which is equivalent to -e .
 
 
 setup(
@@ -25,8 +25,8 @@ name = Project_Name,
 version = Version,
 author = Author,
 description = Description,
-packages = find_packages(),
-install_requires = get_requirements_list()
+packages = find_packages(), # return folders which have __init__ will search in our own code and try to install
+install_requires = get_requirements_list() # External packages from requirements 
 
 
 )
